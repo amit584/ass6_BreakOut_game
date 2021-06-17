@@ -11,11 +11,13 @@ public class KeyPressStoppableAnimation extends AbstractAnimationDecorator {
 
     public KeyPressStoppableAnimation(KeyboardSensor sensor, String key, Animation animation) {
         super(animation);
+        this.sensor = sensor;
+        this.key = key;
     }
 
     @Override
     public boolean shouldStop() {
-        return super.shouldStop();
+        return this.stop;
     }
 
     @Override
