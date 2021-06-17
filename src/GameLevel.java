@@ -166,20 +166,14 @@ public class GameLevel implements Animation{
         this.sprites.drawAllOn(d);
         d.drawText(FRAME_WIDTH / 2 - BORDER_SIZE, 15, "Score: " + gameScore.getValue(), 15);
         d.drawText(FRAME_WIDTH / 2 + 120 , 15, "Level Name: " + info.levelName(), 15);
+        this.sprites.notifyAllTimePassed();
+
         if (this.keyboard.isPressed("p")) {
             this.runner.run(new PauseScreen(this.keyboard));
         }
-        if (ballC.getValue() == 0) {
+        if(ballC.getValue() ==0 || blockC.getValue() == 0 ) {
             this.running = false;
         }
-        if (getBlockC().getValue() == 0) {
-            gameScore.increase(100);
-            this.running = false;
-        }
-        this.sprites.notifyAllTimePassed();
-
-
-
     }
 
     /**

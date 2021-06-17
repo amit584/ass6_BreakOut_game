@@ -18,17 +18,15 @@ public class Ass6Game {
      * @param args (empty)
      */
     public static void main(String[] args) {
-        GameEnvironment environment = new GameEnvironment();
         GUI gui = new GUI("Game", 800, 600);
         AnimationRunner runner = new AnimationRunner(gui);
         KeyboardSensor keyboard = gui.getKeyboardSensor();
-        Counter gameScore = new Counter(0);
         List<LevelInformation> levels = new ArrayList<LevelInformation>();
-        levels.add(new DirectHit());
+        //levels.add(new DirectHit());
         levels.add(new WideEasy());
-        levels.add(new Green3());
-        levels.add(new FinalFour());
-        GameFlow game = new GameFlow(environment, gui, runner, keyboard, gameScore);
+        //levels.add(new Green3());
+        //levels.add(new FinalFour());
+        GameFlow game = new GameFlow(gui, runner, keyboard);
         game.runLevels(levels);
     }
 }

@@ -6,15 +6,18 @@ public class GameLost implements Animation {
     private boolean stop;
     private Counter gameScore;
 
-
     public GameLost(KeyboardSensor k, Counter gameScore) {
         this.keyboard = k;
         this.stop = false;
         this.gameScore = gameScore;
     }
+
+    protected void setStop(boolean stop) {
+        this.stop = stop;
+    }
+
     public void doOneFrame(DrawSurface d) {
         d.drawText(10, d.getHeight() / 2, "Game Over. Your score is " + gameScore.getValue(), 32);
-        if (this.keyboard.isPressed(KeyboardSensor.SPACE_KEY)) { this.stop = true; }
     }
-    public boolean shouldStop() { return this.stop; }
+    public boolean shouldStop() {return this.stop;}
 }

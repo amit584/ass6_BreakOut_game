@@ -71,6 +71,6 @@ public class FinalFour implements LevelInformation {
 
     @Override
     public int numberOfBlocksToRemove() {
-        return 40;
+        return 90;
     }
 }

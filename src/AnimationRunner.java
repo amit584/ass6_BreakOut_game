@@ -26,9 +26,6 @@ public class AnimationRunner {
             if (milliSecondLeftToSleep > 0) {
                 sleeper.sleepFor(milliSecondLeftToSleep);
             }
-
-            // timing
-
         }
     }
 }
