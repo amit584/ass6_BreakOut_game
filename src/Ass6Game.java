@@ -1,8 +1,9 @@
 // ID: 206628794
-
+import LevelInfo.*;
+import GameLogic.*;
 import biuoop.GUI;
 import biuoop.KeyboardSensor;
-
+import Animation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +23,27 @@ public class Ass6Game {
         AnimationRunner runner = new AnimationRunner(gui);
         KeyboardSensor keyboard = gui.getKeyboardSensor();
         List<LevelInformation> levels = new ArrayList<LevelInformation>();
-        //levels.add(new DirectHit());
-        levels.add(new WideEasy());
-        //levels.add(new Green3());
-        //levels.add(new FinalFour());
+        if (args.length == 0)
+        {
+            levels.add(new DirectHit());
+            levels.add(new WideEasy());
+            levels.add(new Green3());
+            levels.add(new FinalFour());
+        }
+        for (String arg : args) {
+            if (arg == "1") {
+                levels.add(new DirectHit());
+            }
+            if (arg == "2") {
+                levels.add(new WideEasy());
+            }
+            if (arg == "3") {
+                levels.add(new Green3());
+            }
+            if (arg == "4") {
+                levels.add(new FinalFour());
+            }
+        }
         GameFlow game = new GameFlow(gui, runner, keyboard);
         game.runLevels(levels);
     }
