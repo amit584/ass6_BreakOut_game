@@ -26,14 +26,12 @@ public class Ass6Game {
         for (String arg : args) {
             System.out.println(arg);
         }
-        if (args.length == 0)
-        {
+        if (args.length == 0) {
             levels.add(new DirectHit());
             levels.add(new WideEasy());
             levels.add(new Green3());
             levels.add(new FinalFour());
-        }
-        else {
+        } else {
             for (String arg : args) {
                 if (arg.equals("1")) {
                     levels.add(new DirectHit());

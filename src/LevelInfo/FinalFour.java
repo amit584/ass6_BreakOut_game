@@ -1,16 +1,19 @@
+//ID: 206628794
 package LevelInfo;
 import java.awt.Color;
 import Animation.*;
 import Sprites.*;
 import Behavior.Velocity;
 import biuoop.DrawSurface;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Amit Shavit
+ */
 public class FinalFour implements LevelInformation {
     static final int SPEED = 6;
-    static final int BLOCK_WIDTH = 780/15;
+    static final int BLOCK_WIDTH = 780 / 15;
     static final int BLOCK_HEIGHT = 30;
 
     @Override
@@ -34,9 +37,9 @@ public class FinalFour implements LevelInformation {
     @Override
     public List<Velocity> initialBallVelocities() {
         List<Velocity> vel =  new ArrayList<Velocity>();
-        vel.add(Velocity.fromAngleAndSpeed(0,SPEED));
-        vel.add(Velocity.fromAngleAndSpeed(0,SPEED));
-        vel.add(Velocity.fromAngleAndSpeed(0,SPEED));
+        vel.add(Velocity.fromAngleAndSpeed(0, SPEED));
+        vel.add(Velocity.fromAngleAndSpeed(0, SPEED));
+        vel.add(Velocity.fromAngleAndSpeed(0, SPEED));
         return vel;
     }
 
@@ -66,9 +69,9 @@ public class FinalFour implements LevelInformation {
                 surface.setColor(new Color(177, 133, 86));
                 surface.fillCircle(400, 300, 120);
                 surface.setColor(new Color(31, 88, 113));
-                surface.fillRectangle(0, 350, GameLevel.FRAME_WIDTH,GameLevel.FRAME_HEIGHT - 350);
+                surface.fillRectangle(0, 350, GameLevel.FRAME_WIDTH, GameLevel.FRAME_HEIGHT - 350);
                 surface.setColor(new Color(32, 44, 68));
-                surface.drawText(100,500,"GOOD NIGHT", 30);
+                surface.drawText(100, 500, "GOOD NIGHT", 30);
 
             }
         };
@@ -78,8 +81,9 @@ public class FinalFour implements LevelInformation {
     @Override
     public List<Block> blocks() {
         List<Block> blocks = new ArrayList<>();
-        Color[] colors = new Color[]{Color.RED, Color.RED, Color.ORANGE, Color.YELLOW, Color.BLUE, Color.PINK, Color.CYAN};
-        for (int j = 6 ; j > 0 ; j--) {
+        Color[] colors = new Color[]{Color.RED, Color.RED, Color.ORANGE, Color.YELLOW,
+                Color.BLUE, Color.PINK, Color.CYAN};
+        for (int j = 6; j > 0; j--) {
             for (int i = 0; i < 15; i++) {
                 Point p = new Point(GameLevel.BORDER_SIZE + (i * BLOCK_WIDTH),
                         50 + j * BLOCK_HEIGHT);

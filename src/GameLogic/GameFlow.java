@@ -1,12 +1,16 @@
+//ID: 206628794
 package GameLogic;
+import Animation.*;
+import Behavior.Counter;
+import LevelInfo.LevelInformation;
+import Sprites.SpriteCollection;
 import biuoop.GUI;
 import biuoop.KeyboardSensor;
-import Animation.*;
-import Sprites.*;
-import Behavior.*;
-import LevelInfo.*;
 import java.util.List;
 
+/**
+ * @author Amit Shavit
+ */
 public class GameFlow {
     private GameEnvironment environment;
     private GUI gui;
@@ -14,6 +18,12 @@ public class GameFlow {
     private KeyboardSensor keyboard;
     private Counter gameScore;
 
+    /**
+     * constructor.
+     * @param gui - game gui
+     * @param runner - game runner
+     * @param keyboard - keyboard sensor
+     */
     public GameFlow(GUI gui, AnimationRunner runner, KeyboardSensor keyboard) {
         this.gui = gui;
         this.runner = runner;
@@ -21,11 +31,16 @@ public class GameFlow {
         this.gameScore = new Counter(0);
     }
 
+    /**
+     * a loop that iterates over all levels of game and runs them.
+     * displays the win/lose/pause screen when needed.
+     * @param levels - list of levels input.
+     */
     public void runLevels(List<LevelInformation> levels) {
         for (LevelInformation levelInfo : levels) {
             SpriteCollection sprites = new SpriteCollection();
-            GameEnvironment environment = new GameEnvironment();
-            GameLevel level = new GameLevel(levelInfo, environment, gui, sprites, runner, keyboard, gameScore);
+            GameEnvironment gameEnvironment = new GameEnvironment();
+            GameLevel level = new GameLevel(levelInfo, gameEnvironment, gui, sprites, runner, keyboard, gameScore);
             level.initialize();
             while (level.getBallC().getValue() != 0 && level.getBlockC().getValue() != 0) {
                 level.run();

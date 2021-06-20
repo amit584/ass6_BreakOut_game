@@ -1,16 +1,28 @@
+// ID: 206628794
 package Animation;
 import biuoop.DrawSurface;
 import biuoop.GUI;
 
+/**
+ * The AnimationRunner takes an Animation object and runs it.
+ */
 public class AnimationRunner {
     private GUI gui;
     private int framesPerSecond;
 
+    /**
+     * constructor.
+     * @param gui - game gui
+     */
     public AnimationRunner(GUI gui) {
         this.gui = gui;
         this.framesPerSecond = 60;
     }
 
+    /**
+     * creates the time loop of the game and runs the wanted animation.
+     * @param animation - the animation we want to run
+     */
     public void run(Animation animation) {
         this.framesPerSecond = 60;
         int millisecondsPerFrame = 1000 / framesPerSecond;

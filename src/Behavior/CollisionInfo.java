@@ -1,9 +1,7 @@
 //ID:  206628794
 package Behavior;
-import Animation.*;
 import Sprites.*;
-import Behavior.*;
-import LevelInfo.*;
+
 /**
  * @author Amit Shavit
  * holds the information about the collision that is going to occur (object, point)

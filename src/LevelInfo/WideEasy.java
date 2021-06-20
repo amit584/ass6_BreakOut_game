@@ -1,13 +1,16 @@
+//ID: 206628794
 package LevelInfo;
 import java.awt.Color;
 import Animation.*;
 import Behavior.*;
 import Sprites.*;
 import biuoop.DrawSurface;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Amit Shavit
+ */
 public class WideEasy implements LevelInformation {
     static final int SPEED = 6;
     static final int BLOCK_WIDTH = 780 / 15;

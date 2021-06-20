@@ -5,8 +5,6 @@ import Animation.*;
 import GameLogic.*;
 import biuoop.DrawSurface;
 import java.awt.Color;
-import Animation.*;
-
 
 
 /**

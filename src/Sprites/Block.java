@@ -4,8 +4,7 @@ import biuoop.DrawSurface;
 import java.awt.Color;
 import Behavior.*;
 import Animation.*;
-import LevelInfo.*;
-import GameLogic.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

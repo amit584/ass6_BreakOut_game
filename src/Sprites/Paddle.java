@@ -2,13 +2,10 @@
 package Sprites;
 import Behavior.*;
 import Animation.*;
-import LevelInfo.*;
-import GameLogic.*;
 import biuoop.DrawSurface;
 import biuoop.GUI;
 import biuoop.KeyboardSensor;
 import java.awt.Color;
-import Behavior.*;
 
 /**
  * @author Amit Shavit

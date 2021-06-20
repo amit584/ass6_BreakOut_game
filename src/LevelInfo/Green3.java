@@ -1,14 +1,17 @@
+//ID: 206628794
 package LevelInfo;
 import Animation.*;
 import Behavior.Velocity;
 import Sprites.*;
 import biuoop.DrawSurface;
-
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Green3 implements LevelInformation{
+/**
+ * @author Amit Shavit
+ */
+public class Green3 implements LevelInformation {
     static final int SPEED = 6;
 
     @Override
@@ -30,8 +33,8 @@ public class Green3 implements LevelInformation{
     @Override
     public List<Velocity> initialBallVelocities() {
         List<Velocity> vel =  new ArrayList<Velocity>();
-        vel.add(Velocity.fromAngleAndSpeed(0,SPEED));
-        vel.add(Velocity.fromAngleAndSpeed(0,SPEED));
+        vel.add(Velocity.fromAngleAndSpeed(0, SPEED));
+        vel.add(Velocity.fromAngleAndSpeed(0, SPEED));
 
         return vel;
     }
@@ -64,7 +67,7 @@ public class Green3 implements LevelInformation{
                 surface.setColor(new Color(109, 203, 110));
                 surface.fillRectangle(0, 350, GameLevel.FRAME_WIDTH, GameLevel.FRAME_HEIGHT - 350);
                 surface.setColor(new Color(50, 107, 132));
-                surface.drawText(100,100,"GOOD MORNING", 30);
+                surface.drawText(100, 100, "GOOD MORNING", 30);
             }
         };
         return background;
@@ -74,11 +77,12 @@ public class Green3 implements LevelInformation{
         List<Block> blocks = new ArrayList<Block>();
         Color[] colors = new Color[]
                 {new Color(153, 204, 255), new Color(102, 178, 255), new Color(51, 153, 255),
-                        new Color(0, 128, 255), new Color(0, 102, 204), new Color(0, 76, 158)};
+                        new Color(0, 128, 255), new Color(0, 102, 204),
+                        new Color(0, 76, 158)};
         for (int i = 5; i > 0; i--) {
             for (int j = 0; j < 10 - i; j++) {
-                Point  p = new Point(GameLevel.FRAME_WIDTH - GameLevel.BORDER_SIZE - 1 - ((j + 1) * Block.BLOCK_WIDTH), 100
-                        + (Block.BLOCK_HEIGHT * i));
+                Point  p = new Point(GameLevel.FRAME_WIDTH - GameLevel.BORDER_SIZE - 1 - ((j + 1) * Block.BLOCK_WIDTH),
+                        100 + (Block.BLOCK_HEIGHT * i));
                 Block block = new Block(colors[i - 1], p);
                 blocks.add(block);
             }
