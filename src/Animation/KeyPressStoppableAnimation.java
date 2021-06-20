@@ -25,9 +25,13 @@ public class KeyPressStoppableAnimation extends AbstractAnimationDecorator {
     @Override
     public void doOneFrame(DrawSurface d) {
         super.doOneFrame(d);
-            if (this.sensor.isPressed(key)) {
-                isAlreadyPressed=false;
+        if (this.sensor.isPressed(key)) {
+            if (isAlreadyPressed) {
+            } else {
                 this.stop = true;
+            }
+        } else {
+            isAlreadyPressed = false;
         }
     }
 }

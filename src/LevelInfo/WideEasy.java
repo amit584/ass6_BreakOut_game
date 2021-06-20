@@ -8,9 +8,9 @@ import biuoop.DrawSurface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WideEasy implements LevelInformation{
+public class WideEasy implements LevelInformation {
     static final int SPEED = 6;
-    static final int BLOCK_WIDTH = 780/15;
+    static final int BLOCK_WIDTH = 780 / 15;
     static final int BLOCK_HEIGHT = 30;
 
     @Override
@@ -21,13 +21,13 @@ public class WideEasy implements LevelInformation{
     @Override
     public List<Point> ballsStartPoints() {
         List<Point> start = new ArrayList<Point>();
-        for(int i = 0; i < numberOfBalls() / 2 ; i++) {
+        for (int i = 0; i < numberOfBalls() / 2; i++) {
             Point p = new Point((380 - (i * BLOCK_HEIGHT)),
                     300 + (BLOCK_HEIGHT * i));
             start.add(p);
         }
-        for(int i = 0; i < numberOfBalls() / 2 ; i++) {
-            Point p =new Point((420 + (i * BLOCK_HEIGHT)),
+        for (int i = 0; i < numberOfBalls() / 2; i++) {
+            Point p = new Point((420 + (i * BLOCK_HEIGHT)),
                     300 + (BLOCK_HEIGHT * i));
             start.add(p);
         }
@@ -36,9 +36,9 @@ public class WideEasy implements LevelInformation{
 
     @Override
     public List<Velocity> initialBallVelocities() {
-        List<Velocity> vel =  new ArrayList<>();
-        for(int i = 0; i < numberOfBalls() ; i++) {
-            Velocity v = Velocity.fromAngleAndSpeed(0 ,SPEED);
+        List<Velocity> vel = new ArrayList<>();
+        for (int i = 0; i < numberOfBalls(); i++) {
+            Velocity v = Velocity.fromAngleAndSpeed(0, SPEED);
             vel.add(v);
         }
         return vel;
@@ -75,10 +75,10 @@ public class WideEasy implements LevelInformation{
                 surface.fillCircle(530, 200, 30);
                 surface.fillCircle(580, 180, 30);
                 surface.setColor(new Color(255, 255, 255));
-                surface.drawText(40,100,"MARIO",20);
-                surface.drawText(40,120,"007100",20);
-                surface.drawText(560,100,"WORLD",20);
-                surface.drawText(560,120,"1-1",20);
+                surface.drawText(40, 100, "MARIO", 20);
+                surface.drawText(40, 120, "007100", 20);
+                surface.drawText(560, 100, "WORLD", 20);
+                surface.drawText(560, 120, "1-1", 20);
                 surface.setColor(new Color(119, 219, 88));
                 surface.fillRectangle(90, 460, 80, 100);
                 surface.setColor(new Color(107, 205, 76));
@@ -107,16 +107,16 @@ public class WideEasy implements LevelInformation{
                 surface.fillRectangle(600, 475, 40, 100);
                 surface.fillRectangle(590, 400, 30, 30);
                 surface.setColor(new Color(250, 221, 51));
-                surface.fillOval(100,200,20,40);
-                surface.fillOval(100,400,20,40);
-                surface.fillOval(200,360,20,40);
-                surface.fillOval(500,500,20,40);
+                surface.fillOval(100, 200, 20, 40);
+                surface.fillOval(100, 400, 20, 40);
+                surface.fillOval(200, 360, 20, 40);
+                surface.fillOval(500, 500, 20, 40);
                 surface.setColor(new Color(113, 69, 45));
                 surface.fillRectangle(0, 560, GameLevel.FRAME_WIDTH, 40);
                 surface.setColor(new Color(105, 158, 72));
                 surface.fillRectangle(0, 560, GameLevel.FRAME_WIDTH, 10);
                 surface.setColor(new Color(0, 0, 0));
-                surface.drawText(550,570,"I WORKED REALLY HARD ON THIS BACKGROUND :)",8);
+                surface.drawText(550, 570, "I WORKED REALLY HARD ON THIS BACKGROUND :)", 8);
 
             }
         };
@@ -134,11 +134,12 @@ public class WideEasy implements LevelInformation{
             Point p = new Point(GameLevel.BORDER_SIZE + (i * BLOCK_WIDTH), 150 + j);
             Block block = new Block(BLOCK_HEIGHT, BLOCK_WIDTH, new Color(189, 155, 84), p);
             blocks.add(block);
-    }
+        }
         return blocks;
     }
 
     @Override
     public int numberOfBlocksToRemove() {
         return 15;
-    }}
+    }
+}

@@ -23,6 +23,9 @@ public class Ass6Game {
         AnimationRunner runner = new AnimationRunner(gui);
         KeyboardSensor keyboard = gui.getKeyboardSensor();
         List<LevelInformation> levels = new ArrayList<LevelInformation>();
+        for (String arg : args) {
+            System.out.println(arg);
+        }
         if (args.length == 0)
         {
             levels.add(new DirectHit());
@@ -30,18 +33,20 @@ public class Ass6Game {
             levels.add(new Green3());
             levels.add(new FinalFour());
         }
-        for (String arg : args) {
-            if (arg == "1") {
-                levels.add(new DirectHit());
-            }
-            if (arg == "2") {
-                levels.add(new WideEasy());
-            }
-            if (arg == "3") {
-                levels.add(new Green3());
-            }
-            if (arg == "4") {
-                levels.add(new FinalFour());
+        else {
+            for (String arg : args) {
+                if (arg.equals("1")) {
+                    levels.add(new DirectHit());
+                }
+                if (arg.equals("2")) {
+                    levels.add(new WideEasy());
+                }
+                if (arg.equals("3")) {
+                    levels.add(new Green3());
+                }
+                if (arg.equals("4")) {
+                    levels.add(new FinalFour());
+                }
             }
         }
         GameFlow game = new GameFlow(gui, runner, keyboard);
